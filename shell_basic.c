@@ -1,22 +1,37 @@
-#ifndef SHELL_BASIC_C_INCLUDED
-#define SHELL_BASIC_C_INCLUDED
+#include <stdio.h>
 
-void control
+char *line_reader()
+{
+	int position = 0;
+	int buffersize = 1024;
+	char buff = malloc(sizeof(char) * buffersize);
+	int c;
+	while(!buff)
+	{
+		fprintf(stderr, "%sdash : Alocation error%s\n", RED, RESET);
+		exit(EXIT_FAILURE);
+	}
+}
+
+void control()
 {
     char *linear;
     char **spliter;
-    int luncher = 1;
+    int determin = 1;
 
     do {
             printf("> ");
             linear = line_reader();
             flag = 0;
             spliter = line_spliter(line);
-            luncher = bash_luncher(spliter);
+            determin = bash_luncher(spliter);
             free(linear);
-            free(spliter);
+            free(determin);
     }while(luncher);
 }
 
+int main()
+{
+    control();
+}
 
-#endif // SHELL_BASIC_C_INCLUDED
