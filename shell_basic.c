@@ -8,7 +8,7 @@ char *line_reader()
 	int c;
 	if (!buff)
 	{
-		fprintf(stderr, "%sdash : Alocation error%s\n", RED, RESET);
+		fprintf(stderr, "%sdash : Allocation error%s\n", RED, RESET);
 		exit(EXIT_FAILURE);
 	}
 	while(1)
@@ -38,7 +38,44 @@ char *line_reader()
 				fprintf(stderr, "dash: Allocation error");
 				exit(EXIT_FAILURE);
 			}
+		}
 	}
+}
+
+char **line_spliter(car *linear)
+{
+	int buffersize, position = 0;
+	char **tokens = malloc(buffersize * sizeof(char *));
+	char *tok;
+
+	if (!tokens)
+	{
+		fprintf(stderr, "%sdash: Allocation error %s\n", RED, RESET);
+		exit(EXIT_FAILURE);
+	}
+	token = (linear, TOK_DELIM);
+	while (token)
+	{
+		tokens[position] = token;
+		position++;
+
+		if (position >= buffersize)
+		{
+			buffersize += 1024;
+			tokens = realloc(tokens, buffersize);
+
+			if(!tokens)
+			{
+				fprintf(stderr, "dash: Allocation error");
+				exit(EXIT_FAILURE);
+			}
+		}
+		tok = strtok(NULL, TOK_DELIM);
+	}
+	tokens[position] = NULL;
+
+	return tokens;
+}
 
 void control()
 {
