@@ -6,7 +6,7 @@ char *line_reader()
 	int buffersize = 1024;
 	char buff = malloc(sizeof(char) * buffersize);
 	int c;
-	while(!buff)
+	if (!buff)
 	{
 		fprintf(stderr, "%sdash : Alocation error%s\n", RED, RESET);
 		exit(EXIT_FAILURE);
@@ -23,8 +23,22 @@ char *line_reader()
 		else
 		{
 			buff[position] = c;
+		
 		}
-}
+		position++;
+
+		if (position >= buffersize)
+		{
+			//int buff2 = buffersize += 1024;
+			buffersize += 1024;
+			buff = realloc(buff, buffersize);
+
+			if (!buff)
+			{
+				fprintf(stderr, "dash: Allocation error");
+				exit(EXIT_FAILURE);
+			}
+	}
 
 void control()
 {
