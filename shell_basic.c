@@ -11,6 +11,19 @@ char *line_reader()
 		fprintf(stderr, "%sdash : Alocation error%s\n", RED, RESET);
 		exit(EXIT_FAILURE);
 	}
+	while(1)
+	{
+		c = getchar();
+		if(c == EOF || c == '\n')
+		{
+			//printf("\n");
+			buff[position] = '\0';
+			return buff;
+		}
+		else
+		{
+			buff[position] = c;
+		}
 }
 
 void control()
