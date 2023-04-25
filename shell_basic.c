@@ -53,10 +53,11 @@ char **line_spliter(car *linear)
 		fprintf(stderr, "%sdash: Allocation error %s\n", RED, RESET);
 		exit(EXIT_FAILURE);
 	}
-	token = (linear, TOK_DELIM);
-	while (token)
+
+	tok = strtok(linear, TOK_DELIM);
+	while (tok)
 	{
-		tokens[position] = token;
+		tokens[position] = tok;
 		position++;
 
 		if (position >= buffersize)
@@ -75,6 +76,11 @@ char **line_spliter(car *linear)
 	tokens[position] = NULL;
 
 	return tokens;
+}
+
+int exit_func(int **splinter)
+{
+	return (0);
 }
 
 void control()
