@@ -24,6 +24,11 @@ int main(void)
 	printf("the value: %s", buff);
 
 	tokens = malloc(strlen(buff));
+	if (!tokens)
+	{
+		printf("Error allocation of memory\n");
+			return (0);
+	}
 
 	tokens[i] = strtok(buff, " ");
 	while (tokens[i])
@@ -35,7 +40,7 @@ int main(void)
 
 	while (tokens[i])
 	{
-		printf("%s\n", tokens[i]);
+		printf("item %d:  %s\n", i, tokens[i]);
 		i++;
 	}
 
