@@ -22,13 +22,14 @@ int main(void)
 	
 	printf("The number of character is %ld\n", n--);
 	printf("the value: %s", buff);
-	
+
+	tokens = malloc(strlen(buff));
 
 	tokens[i] = strtok(buff, " ");
 	while (tokens[i])
 	{
 		++i;
-		tokens[i] = strtok(buff, " ");
+		tokens[i] = strtok(NULL, " ");
 	}
 	i = 0;
 
