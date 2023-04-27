@@ -8,7 +8,7 @@ int main(void)
 
 	printf("my current PID is %d\n", getpid());
 
-	pid_t childp = fork();
+
 	printf("%d\n", a);
 
 	printf("my parent PID is %d\n my current PID is %d\n", getppid(), getpid());
