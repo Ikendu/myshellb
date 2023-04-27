@@ -4,7 +4,7 @@ int main(int ac, char **av)
 {
 	(void) ac;
 	(void) av;
-	char *buff;
+	char *buff = NULL;
 	ssize_t line;
 	size_t n;
 
