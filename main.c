@@ -18,7 +18,7 @@ int main(int ac, char **av)
 		
 		if (line == -1)
 		{
-			printf("Exiting...");
+			printf("Exiting...\n");
 			return (-1);
 		}
 
@@ -27,7 +27,7 @@ int main(int ac, char **av)
 		buff2 = malloc(sizeof(char) * line);
 		if(buff2 == NULL)
 		{
-			perror("Allocation failed");
+			perror("Allocation failed\n");
 			return (-1);
 		}
 		strcpy(buff2, buff);
@@ -51,9 +51,18 @@ int main(int ac, char **av)
 			token = strtok(NULL, " \n");
 		}
 		av[i] = NULL;
+		i = 0;
+		while(av[i])
+		{
+			printf("%s\n", av[i]);
+			i++;
+		}
 
 
 	}
+	free(av);
+	free(buff2);
+	free(buff);
 
 	return (0);
 }
