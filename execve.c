@@ -4,9 +4,8 @@ void execmd(char **av)
 {
 	char *command = NULL;
 
-	while (1)
-	{
-		if(av)
+	
+	if(av)
 		{
 			command = av[0];
 			int exe = execve(command, av, NULL);
@@ -15,5 +14,4 @@ void execmd(char **av)
 				perror("Execution error ocured");
 			}
 		}
-	}
-}
+}		
