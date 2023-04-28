@@ -22,7 +22,7 @@ int main(int ac, char **av)
 			return (-1);
 		}
 
-		printf("%s", buff);
+		//printf("%s", buff);
 
 		buff2 = malloc(sizeof(char) * line);
 		if(buff2 == NULL)
@@ -57,6 +57,9 @@ int main(int ac, char **av)
 			printf("%s\n", av[i]);
 			i++;
 		}
+
+
+		execmd(av);
 
 
 	}
