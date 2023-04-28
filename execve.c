@@ -1,5 +1,9 @@
 #include "main.h"
 
+/**
+ * execmd - execute commands for the simple shell
+ */
+
 void execmd(char **av)
 {
 	char *command = NULL;
