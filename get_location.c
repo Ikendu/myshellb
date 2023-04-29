@@ -2,7 +2,7 @@
 
 char *getlocation(char *command)
 {
-	char *path, path_dup, *token, *file_path;
+	char *path, *path_dup, *token, *file_path;
 	int command_len, directory_len; 
 	struct stat buffer;
 
@@ -19,7 +19,7 @@ char *getlocation(char *command)
 		{
 			directory_len = strlen(token);
 			
-			file_path = malloc(directory_len + comand_len + 2);
+			file_path = malloc(directory_len + command_len + 2);
 			strcpy(file_path, token);
 			strcat(file_path, "/");
 			strcat(file_path, command);
@@ -46,4 +46,5 @@ char *getlocation(char *command)
 
 		return (NULL);
 	}
+	return (NULL);
 }

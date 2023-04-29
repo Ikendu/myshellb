@@ -6,7 +6,9 @@
 #include <sys/types.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/stat.h>
 
 void execmd(char **av);
+char *getlocation(char *command);
 
 #endif
