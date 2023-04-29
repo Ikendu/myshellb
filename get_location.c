@@ -34,7 +34,7 @@ char *getlocation(char *command)
 			else
 			{
 				free(file_path);
-				token = strtok(path, ":");
+				token = strtok(NULL, ":");
 			}
 		}
 		free(path_dup);
