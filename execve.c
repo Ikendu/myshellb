@@ -6,13 +6,17 @@
 
 void execmd(char **av)
 {
-	char *command = NULL;
+	char *command = NULL, *actual_command;
 
 	
 	if(av)
 		{
 			command = av[0];
-			int exe = execve(command, av, NULL);
+
+			actual_command = getlocation(command);  
+			
+			int exe = execve(actual_command, av, NULL);
+
 			if (exe == -1)
 			{
 				perror("Execution error ocured");
